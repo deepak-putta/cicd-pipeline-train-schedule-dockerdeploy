@@ -4,7 +4,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh 'sdk use java 8.0.222.j9-adpt'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
